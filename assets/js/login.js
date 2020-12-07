@@ -52,10 +52,13 @@ $(function() {
             method: "POST",
             data: $(this).serialize(),
             success: function(res) {
-                if (res.message !== 0) return layer.msg(res.message);
-                layer.msg(res.message);
-                localStorage.setItem('token', JSON.stringify(res.token))
-                location.href = '/index.html'
+                if (res.status !== 0) {
+                    return layer.msg("登陆失败");
+                }
+
+                layer.msg("登陆成功");
+                localStorage.setItem('token', res.token)
+                location.href = './index.html'
             }
         });
     });

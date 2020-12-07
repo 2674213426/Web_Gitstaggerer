@@ -1,15 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- 引入 Layui css样式 -->
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+
+    <!-- 引入自己的 index.css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+
+
 </head>
 
-<body>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <img src="./assets/images/logo.png" alt="">
+            </div>
 
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span class="tx txx">A</span> <span class="hy">LikeYou</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:;">基本资料</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">更换头像</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">重置密码</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+
+                    <!-- 退出 按钮 -->
+                    <a href="JavaScript:;" id="ExitButton">
+                        <span class="iconfont icon-tuichu">&#xe865;</span> 退出
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
+                    <li class="ImageRendering">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img tx">
+                        <span class="tx txx">A</span> <span class="hy">欢迎 ***</span>
+                    </li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="./home/dashboard.html" target="fm" id="clck">
+                            <span class="iconfont">&#xe6a9;</span> 首页
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">
+                            <span class="iconfont">&#xe615;</span> 文章管理
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发表文章</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+
+                        <a href="javascript:;">
+                            <span class="iconfont">&#xe614;</span> 个人中心
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;">
+                                    <i class="layui-icon layui-icon-app"></i> 基本资料
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">
+                                    <i class="layui-icon layui-icon-app"></i>更换头像</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">
+                                    <i class="layui-icon layui-icon-app"></i>重置密码</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+
+            <!-- 内容主体区域 -->
+            <div style="padding: 15px;">
+                <div class="layui-body">
+                    <!-- 内容主体区域 -->
+                    <iframe name="fm" src="./home/dashboard.html" frameborder="0" id="Home"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-footer">
+
+            <!-- 底部固定区域 -->
+            © layui.com - 底部固定区域
+        </div>
+    </div>
+
+    <!-- 引入 jQuery -->
+    <script src="./assets/lib/jquery.js"></script>
+
+    <!-- 引入 Layui 的js 文件 -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
+
+    <!-- 引入 我们自定义的 API -->
+    <script src="./assets/js/baseApi.js"></script>
+
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function() {
+            var element = layui.element;
+        });
+    </script>
+
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
