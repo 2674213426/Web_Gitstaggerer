@@ -47,12 +47,12 @@ function Renderuserinfo(obj) {
     let a = obj.data.nickname || obj.data.username;
     if (a.length >= 5) {
 
-        $(".hy").html("欢迎" + a.substring(0, 5));
+        $(".hy").html("欢迎   " + a.substring(0, 5));
     } else {
-        $(".hy").html("欢迎" + a);
+        $(".hy").html("欢迎   " + a);
     }
     if (obj.data.user_pic) {
-        $(".layui-nav-img").css("src", obj.data.user_pic);
+        $(".layui-nav-img").attr("src", obj.data.user_pic);
         $(".txx").hide();
     } else {
         $(".layui-nav-img").hide();

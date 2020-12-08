@@ -1,0 +1,8 @@
+body {
+    margin: 15px;
+    background-color: #eee;
+}
+
+input {
+    width: 400px !important;
+}
